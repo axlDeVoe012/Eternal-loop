@@ -93,7 +93,7 @@ const ResolutionsSection = () => {
   }));
 
   return (
-    <section className="relative min-h-screen py-40 font-romantic bg-[#0A0A0A] overflow-hidden">
+    <section id="resolutions-section" className="relative min-h-screen py-40 font-romantic bg-[#0A0A0A] overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-[#2b0f16] to-black" />
 

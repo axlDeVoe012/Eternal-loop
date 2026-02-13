@@ -35,9 +35,9 @@ const HeroSection = () => {
         </Canvas>
       </div>
 
-      <div className="relative z-20 mt-[55vh] px-6 font-romantic">
+      <div className="relative z-20 mt-[45vh] sm:mt-[55vh] px-4 sm:px-6 font-romantic">
         <motion.h1
-          className="text-5xl sm:text-7xl font-light tracking-widest text-transparent bg-clip-text"
+          className="text-3xl sm:text-5xl md:text-7xl font-light tracking-widest text-transparent bg-clip-text"
           style={{
             backgroundImage: `linear-gradient(120deg,#F4E4B1,#D4AF37,#F4E4B1)`,
             backgroundSize: "200% 200%",
@@ -47,7 +47,7 @@ const HeroSection = () => {
           TO MY DEAREST WAME
         </motion.h1>
 
-        <p className="mt-6 text-[#F4E4B1] tracking-widest text-sm uppercase">
+        <p className="mt-4 sm:mt-6 text-[#F4E4B1] tracking-widest text-xs sm:text-sm uppercase">
           Forever & Always
         </p>
       </div>
@@ -62,7 +62,7 @@ export default function App() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Initialize audio
+    // Initialize audio - use the song from public folder
     audioRef.current = new Audio("/audio/so-amazing.mp3");
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
@@ -132,13 +132,13 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Music toggle */}
+      {/* Music toggle - mobile friendly */}
       <button
         onClick={toggleMusic}
-        className="fixed bottom-6 right-6 z-50 bg-black/60 backdrop-blur-xl p-4 rounded-full border border-gold/30"
+        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-black/60 backdrop-blur-xl p-3 sm:p-4 rounded-full border border-gold/30"
         aria-label="Toggle music"
       >
-        {isPlaying ? <Volume2 /> : <VolumeX />}
+        {isPlaying ? <Volume2 size={20} className="sm:w-6 sm:h-6" /> : <VolumeX size={20} className="sm:w-6 sm:h-6" />}
       </button>
     </div>
   );

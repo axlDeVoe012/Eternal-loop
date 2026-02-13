@@ -14,6 +14,7 @@ export default function StorySection({ autoPlay = false }) {
               event={event}
               index={index}
               totalChapters={storyEvents.length}
+              isLastChapter={index === storyEvents.length - 1}
             />
           ))}
         </div>
